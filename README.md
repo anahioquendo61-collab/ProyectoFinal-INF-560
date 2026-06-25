@@ -56,3 +56,20 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+# INF560 - Gestor de Proyectos Colaborativos
+
+## 📌 Descripción
+Sistema web desarrollado en Laravel para gestión de proyectos colaborativos con control de acceso por roles y permisos.
+
+---
+
+## ⚙️ Instalación
+
+```bash
+composer install
+npm install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate --seed
+php artisan serve
