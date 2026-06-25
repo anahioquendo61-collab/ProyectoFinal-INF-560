@@ -60,7 +60,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 # INF560 - Gestor de Proyectos Colaborativos
 
 ## 📌 Descripción
-Sistema web desarrollado en Laravel para gestión de proyectos colaborativos con control de acceso por roles y permisos.
+Sistema web monolítico desarrollado en Laravel para gestión de proyectos colaborativos con autenticación, roles y permisos.
 
 ---
 
@@ -72,4 +72,5 @@ npm install
 cp .env.example .env
 php artisan key:generate
 php artisan migrate --seed
+php artisan db:seed --class=RolePermissionSeeder
 php artisan serve

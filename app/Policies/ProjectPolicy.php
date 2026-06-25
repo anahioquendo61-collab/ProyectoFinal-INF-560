@@ -32,10 +32,11 @@ class ProjectPolicy
         return false;
     }
 
-   public function update($user, $project)
+   public function update(User $user, Project $project): bool
     {
-        return $user->id === $project->owner_id
-            || $user->hasRole('admin');
+        return $user->hasRole('admin')
+            || ($user->can('editar proyecto')
+            && $project->owner_id === $user->id);
     }
 
     /**

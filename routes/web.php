@@ -13,8 +13,11 @@ Route::middleware(['auth'])->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::resource('projects', App\Http\Controllers\ProjectController::class);
-    Route::resource('tasks', App\Http\Controllers\TaskController::class);
+    Route::resource('projects', ProjectController::class);
+
+    Route::middleware(['role:admin'])->group(function () {
+        Route::get('/admin/users', [AdminController::class, 'users']);
+    });
 
 });
 
